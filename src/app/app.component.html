@@ -1,6 +1,10 @@
-<div class="container" (click)="onClick($event)">
-  <div
-    #box
-    class="box"
-  ></div>
+<div class="container">
+  <button
+    class="my-button"
+    [class.disabled]="isDisabled"
+    [disabled]="isDisabled"
+    (click)="toggleIsDisabled()"
+  >
+    My Button
+  </button>
 </div>

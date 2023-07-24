@@ -6,14 +6,15 @@ import { Component, ViewChild, ElementRef } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  @ViewChild("box", { static: true }) box!: ElementRef;
+  isDisabled = false;
 
-  onClick(args: any): void {
-    if (!(this.box && this.box.nativeElement)) {
-      return;
-    }
-    this.box.nativeElement.style.transform = `
-      translateX(${args.clientX - 100}px) translateY(${args.clientY - 100}px)
-    `;
+  toggleIsDisabled(): void {
+    console.log("setting to true");
+    this.isDisabled = true;
+    // simulate an API call and reset the isDisabled flag
+    setTimeout(() => {
+      console.log("false again");
+      this.isDisabled = false;
+    }, 5000);
   }
 }
