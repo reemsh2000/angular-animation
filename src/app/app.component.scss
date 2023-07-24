@@ -1,12 +1,37 @@
-.container {
-  height: 100vh;
-  width: 100%;
-  background-color: #dedede;
-  overflow: hidden;
-  .box {
-    background-color: rgb(123, 231, 177);
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+.box-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40%;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+  display: grid;
+  align-items: center;
+  border-radius: 5px;
+
+  // css keyframe related configurationss
+  animation-name: color-change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: blue;
+  }
+
+  50% {
+    background-color: gray;
+  }
+
+  100% {
+    background-color: red;
   }
 }
