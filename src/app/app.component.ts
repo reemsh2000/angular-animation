@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-root",
@@ -6,14 +6,21 @@ import { Component, ViewChild, ElementRef } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  @ViewChild("box", { static: true }) box!: ElementRef;
+  private timer: any = undefined;
+  isAdded = false;
 
-  onClick(args: any): void {
-    if (!(this.box && this.box.nativeElement)) {
-      return;
+  addToCart(): void {
+    this.isAdded = true;
+    this.clearTimer();
+    this.timer = setTimeout(() => {
+      this.isAdded = false;
+    }, 5000);
+  }
+
+  private clearTimer(): void {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = undefined;
     }
-    this.box.nativeElement.style.transform = `
-      translateX(${args.clientX - 100}px) translateY(${args.clientY - 100}px)
-    `;
   }
 }

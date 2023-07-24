@@ -1,6 +1,5 @@
-<div class="container" (click)="onClick($event)">
-  <div
-    #box
-    class="box"
-  ></div>
+<div class="container">
+  <button class="cart-button" [class.success]="isAdded" (click)="addToCart()">
+    {{ isAdded ? "Added" : "Add to Cart" }}
+  </button>
 </div>
