@@ -1,12 +1,28 @@
 .container {
-  height: 100vh;
   width: 100%;
-  background-color: #dedede;
-  overflow: hidden;
-  .box {
-    background-color: rgb(123, 231, 177);
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+  height: 400px;
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .cart-button {
+    background-color: #3498db;
+    width: 100px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 2px 0 #7f8c8d;
+    cursor: pointer;
+
+    transition: 0.5s ease-out;
+    &.success {
+      background-color: #27ae60;
+    }
   }
 }
