@@ -1,6 +1,11 @@
-<div class="container" (click)="onClick($event)">
+<div class="container">
   <div
-    #box
-    class="box"
-  ></div>
+    class="toast"
+    [class.toast-show]="toastIsVisible"
+    (click)="dismissToast()"
+  >
+    Hello! I'm a toast! 🍞
+  </div>
+
+  <button class="button" (click)="showToast()">Show Toast</button>
 </div>
