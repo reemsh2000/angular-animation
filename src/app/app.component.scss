@@ -1,12 +1,36 @@
 .container {
-  height: 100vh;
-  width: 100%;
-  background-color: #dedede;
-  overflow: hidden;
-  .box {
-    background-color: rgb(123, 231, 177);
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  nav {
+    margin: 0;
+    padding: 0;
+    background-color: #3498db;
+    border-radius: 5px;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      font-family: sans-serif;
+      color: #e2e2e2;
+      margin: 0;
+      padding: 4px;
+      li {
+        margin: 0;
+        padding: 15px;
+        cursor: pointer;
+        border-top: 2px solid transparent; // to balance out the border bottom
+        border-bottom: 2px solid transparent;
+        transition: 0.4s ease-in;
+        &:hover {
+          color: #fff;
+          border-bottom: 2px solid #fff;
+        }
+        &.selected {
+          background-color: #fff;
+          color: #3498db;
+        }
+      }
+    }
   }
 }
