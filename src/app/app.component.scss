@@ -1,12 +1,20 @@
 .container {
-  height: 100vh;
-  width: 100%;
-  background-color: #dedede;
-  overflow: hidden;
-  .box {
-    background-color: rgb(123, 231, 177);
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-button {
+  background-color: rgb(123, 231, 177);
+  padding: 10px 15px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  // we will be animating these
+  transition: background-color 0.5s ease-in;
+
+  &.blue {
+    background-color: rgb(120, 189, 250);
   }
 }

@@ -1,6 +1,10 @@
-<div class="container" (click)="onClick($event)">
-  <div
-    #box
-    class="box"
-  ></div>
+<div class="container">
+  <button
+    #myButton
+    class="my-button"
+    [class.blue]="isBlue"
+    (click)="toggleIsBlue()"
+  >
+    My Button
+  </button>
 </div>
