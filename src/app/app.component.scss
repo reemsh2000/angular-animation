@@ -1,12 +1,21 @@
 .container {
-  height: 100vh;
-  width: 100%;
-  background-color: #dedede;
-  overflow: hidden;
-  .box {
-    background-color: rgb(123, 231, 177);
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box {
+  background-color: rgb(123, 231, 177);
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1);
+
+  transition: transform 0.5s ease-in, 0.5s opacity 0.5s;
+
+  &.shrunk {
+    opacity: 0.5;
+    transform: scale(0.8);
   }
 }
