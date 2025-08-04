@@ -1,12 +1,21 @@
 .container {
-  height: 100vh;
-  width: 100%;
-  background-color: #dedede;
-  overflow: hidden;
-  .box {
-    background-color: rgb(123, 231, 177);
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-button {
+  background-color: blanchedalmond;
+  padding: 10px 15px;
+  margin: 20px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  transform: scale(1, 1);
+  transition: transform 0.4s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2, 1.2);
   }
 }
