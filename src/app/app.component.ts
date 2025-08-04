@@ -6,14 +6,26 @@ import { Component, ViewChild, ElementRef } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  @ViewChild("box", { static: true }) box!: ElementRef;
+  toastIsVisible = false;
+  private timer: any = undefined;
 
-  onClick(args: any): void {
-    if (!(this.box && this.box.nativeElement)) {
-      return;
+  dismissToast(): void {
+    this.toastIsVisible = false;
+    this.clearTimer();
+  }
+
+  showToast(): void {
+    this.toastIsVisible = true;
+    this.clearTimer();
+    this.timer = setTimeout(() => {
+      this.dismissToast();
+    }, 5000);
+  }
+
+  private clearTimer(): void {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = undefined;
     }
-    this.box.nativeElement.style.transform = `
-      translateX(${args.clientX - 100}px) translateY(${args.clientY - 100}px)
-    `;
   }
 }
